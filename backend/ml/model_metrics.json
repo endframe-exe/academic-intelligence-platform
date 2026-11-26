@@ -1,0 +1,100 @@
+{
+  "model_version": "model_v1",
+  "trained_at_utc": "2026-11-26T14:35:22.841121+00:00",
+  "dataset_summary": {
+    "source": "Calibrated synthetic-benchmark student performance records (grouped by student_id)",
+    "total_records": 600,
+    "unique_students": 120,
+    "split_protocol": "GroupShuffleSplit 60% train / 20% validation / 20% held-out test (zero student leakage)",
+    "train_records": 360,
+    "validation_records": 120,
+    "test_records": 120
+  },
+  "features": [
+    "internal_assessment_pct",
+    "attendance_pct",
+    "weekly_study_hours",
+    "subject_credits"
+  ],
+  "selected_regressor": "RidgeRegression",
+  "baseline_mean_mae": 8.412,
+  "held_out_regression": {
+    "mae": 3.133,
+    "rmse": 4.063,
+    "r2": 0.844
+  },
+  "validation_selection": {
+    "RidgeRegression": {
+      "val_mae": 2.752,
+      "val_rmse": 3.576,
+      "val_r2": 0.923
+    },
+    "RandomForestRegressor": {
+      "val_mae": 3.143,
+      "val_rmse": 4.106,
+      "val_r2": 0.899
+    }
+  },
+  "candidate_test_comparison": {
+    "RidgeRegression": {
+      "mae": 3.133,
+      "rmse": 4.063,
+      "r2": 0.844
+    },
+    "RandomForestRegressor": {
+      "mae": 3.314,
+      "rmse": 4.197,
+      "r2": 0.833
+    }
+  },
+  "held_out_classification": {
+    "classifier_name": "LogisticRegression",
+    "labels": [
+      "On Track",
+      "Needs Revision",
+      "High Support Priority"
+    ],
+    "f1_weighted": 0.766,
+    "f1_macro": 0.745,
+    "precision_weighted": 0.767,
+    "recall_weighted": 0.767,
+    "confusion_matrix": [
+      [
+        13,
+        7,
+        0
+      ],
+      [
+        6,
+        53,
+        6
+      ],
+      [
+        0,
+        9,
+        26
+      ]
+    ],
+    "per_class": {
+      "On Track": {
+        "precision": 0.684,
+        "recall": 0.65,
+        "f1": 0.667,
+        "support": 20
+      },
+      "Needs Revision": {
+        "precision": 0.768,
+        "recall": 0.815,
+        "f1": 0.791,
+        "support": 65
+      },
+      "High Support Priority": {
+        "precision": 0.812,
+        "recall": 0.743,
+        "f1": 0.776,
+        "support": 35
+      }
+    }
+  },
+  "disclaimer": "Benchmarked on public/synthetic-calibrated data; estimates are guidance, not official NIET grades."
+}

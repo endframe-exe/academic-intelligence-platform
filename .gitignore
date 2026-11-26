@@ -1,0 +1,21 @@
+# Python / Backend
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+backend/uploads/
+backend/ml_artifacts/*.joblib
+
+# Node / Frontend
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Environment & OS
+.env
+.env.local
+.DS_Store
+Thumbs.db
